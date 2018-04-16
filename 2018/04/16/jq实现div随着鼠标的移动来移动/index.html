@@ -6,26 +6,31 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: fuck | Blog(*^▽^*)</title>
+  <title>js实现dom元素,和其投影的方向和长度随着鼠标的移动变化 | Blog(*^▽^*)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog(*^▽^*)">
-<meta property="og:url" content="http://yoursite.com/tags/fuck/index.html">
+  <meta name="description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
+<meta name="keywords" content="js,css,html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js实现dom元素,和其投影的方向和长度随着鼠标的移动变化">
+<meta property="og:url" content="http://yoursite.com/2018/04/16/jq实现div随着鼠标的移动来移动/index.html">
 <meta property="og:site_name" content="Blog(*^▽^*)">
+<meta property="og:description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-16T08:45:00.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog(*^▽^*)">
+<meta name="twitter:title" content="js实现dom元素,和其投影的方向和长度随着鼠标的移动变化">
+<meta name="twitter:description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
   
     <link rel="alternative" href="/atom.xml" title="Blog(*^▽^*)" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: rgba(0,0,0,.3);
     }
   </style>
   
@@ -43,7 +48,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="//upload.jianshu.io/users/upload_avatars/5518556/b903a4f2-64b5-4095-8cf6-a6515930ea55.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/300" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">LinHo</a></h1>
@@ -55,7 +60,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -81,9 +86,7 @@
 		        
 					<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/269467cd0813" title="jianshu"><i class="icon-jianshu"></i></a>
 		        
-					<a class="mail" target="_blank" href="https://444920039@qq.com" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="linkedin" target="_blank" href="/aaa" title="linkedin"><i class="icon-linkedin"></i></a>
+					<a class="bilibili" target="_blank" href="https://space.bilibili.com/33673908" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
 			</div>
 		</nav>
@@ -101,7 +104,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="//upload.jianshu.io/users/upload_avatars/5518556/b903a4f2-64b5-4095-8cf6-a6515930ea55.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/300" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">LinHo</h1>
@@ -122,9 +125,7 @@
 			        
 						<a class="jianshu" target="_blank" href="https://www.jianshu.com/u/269467cd0813" title="jianshu"><i class="icon-jianshu"></i></a>
 			        
-						<a class="mail" target="_blank" href="https://444920039@qq.com" title="mail"><i class="icon-mail"></i></a>
-			        
-						<a class="linkedin" target="_blank" href="/aaa" title="linkedin"><i class="icon-linkedin"></i></a>
+						<a class="bilibili" target="_blank" href="https://space.bilibili.com/33673908" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
 				</div>
 			</nav>
@@ -135,7 +136,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,75 +151,190 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jq实现div随着鼠标的移动来移动" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/12/my-first-blog/" class="archive-article-date">
-  	<time datetime="2018-04-12T08:59:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/12/my-first-blog/">my-first-blog</a>
+    <h1 class="article-title" itemprop="name">
+      js实现dom元素,和其投影的方向和长度随着鼠标的移动变化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/16/jq实现div随着鼠标的移动来移动/" class="archive-article-date">
+  	<time datetime="2018-04-16T06:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动<br>投影也要根据鼠标的移动有变化<br>代码很简单，效果也挺好<br>浏览地址：<a href="https://zhu8191553.github.io/IFE2017/blogDemo/mouseMove.html" target="_blank" rel="noopener">demo鼠标移动效果</a><br><a id="more"></a></p>
+<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;ball&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const bodyWith = document.documentElement.clientWidth;   //获取当前页面可视宽度</span><br><span class="line">const body = document.body;</span><br><span class="line">const block = document.querySelector(&apos;.ball&apos;);</span><br><span class="line">body.addEventListener(&apos;mousemove&apos;,function(e) &#123;</span><br><span class="line">    let left = e.pageX/10;                               //盒子移动速度是鼠标移动速度的10分之1</span><br><span class="line">    block.style.left = -bodyWith/20 + left+&apos;px&apos;          </span><br><span class="line">    let shadow = (e.pageX - bodyWith/2)/50</span><br><span class="line">    block.style.boxShadow =  shadow + &apos;px 2px 10px rgba(0,0,0,.5)&apos;      //盒子的投影随着鼠标的移动，左右移动</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">    height: 400px;</span><br><span class="line">    width: 200px;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translateX(-50%);</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.ball &#123;</span><br><span class="line">    height: 200px;</span><br><span class="line">    width: 200px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 100px;</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    background: #999;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有人看就是好事，感谢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">start</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">fuck</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/分类//" class="article-tag-list-link color3">分类</a>
+        			<a href="/categories/动画//" class="article-tag-list-link color3">动画</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/16/jq实现div随着鼠标的移动来移动/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/04/16/jq实现div随着鼠标的移动来移动/", 
+    sourceId: "jq实现div随着鼠标的移动来移动",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -241,9 +357,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -311,11 +427,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">start</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">fuck</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>
@@ -367,27 +487,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="http://39.107.229.87/home" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的毕业设计</a>
             </li>
           
         </ul>
@@ -398,7 +498,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">菜、可爱、应届生&lt;br/&gt;刚入职的前端开发实习生&lt;br/&gt;I will be better&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</div>
   	  	
     	</section>
     
