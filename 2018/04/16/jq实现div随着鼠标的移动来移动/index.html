@@ -9,14 +9,14 @@
   <title>js实现dom元素,和其投影的方向和长度随着鼠标的移动变化 | Blog(*^▽^*)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
-<meta name="keywords" content="js,css,html">
+<meta name="keywords" content="css,js,html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js实现dom元素,和其投影的方向和长度随着鼠标的移动变化">
 <meta property="og:url" content="http://yoursite.com/2018/04/16/jq实现div随着鼠标的移动来移动/index.html">
 <meta property="og:site_name" content="Blog(*^▽^*)">
 <meta property="og:description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-16T09:10:23.251Z">
+<meta property="og:updated_time" content="2018-04-17T02:40:41.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js实现dom元素,和其投影的方向和长度随着鼠标的移动变化">
 <meta name="twitter:description" content="前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动投影也要根据鼠标的移动有变化代码很简单，效果也挺好浏览地址：demo鼠标移动效果">
@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动<br>投影也要根据鼠标的移动有变化<br>代码很简单，效果也挺好<br>浏览地址：<a href="https://zhu8191553.github.io/IFE2017/blogDemo/mouseMove.html" target="_blank" rel="noopener">demo鼠标移动效果</a><br><a id="more"></a></p>
+        <p>前几天做一个活动页，产品要让一个大标题随着鼠标的移动轻微的动一动<br>投影也要根据鼠标的移动有变化<br>代码很简单，效果也挺好<br>浏览地址：<a href="https://zhu8191553.github.io/IFE2017/blogDemo/mouseMove.html" target="_blank" rel="noopener">demo鼠标移动效果</a><br><br><a id="more"></a></p>
 <h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ball"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyWith = <span class="built_in">document</span>.documentElement.clientWidth;   <span class="comment">//获取当前页面可视宽度</span></span><br><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body;</span><br><span class="line"><span class="keyword">const</span> block = <span class="built_in">document</span>.querySelector(<span class="string">'.ball'</span>);</span><br><span class="line">body.addEventListener(<span class="string">'mousemove'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left = e.pageX/<span class="number">10</span>;                               <span class="comment">//盒子移动速度是鼠标移动速度的10分之1</span></span><br><span class="line">    block.style.left = -bodyWith/<span class="number">20</span> + left+<span class="string">'px'</span>          </span><br><span class="line">    <span class="keyword">let</span> shadow = (e.pageX - bodyWith/<span class="number">2</span>)/<span class="number">50</span></span><br><span class="line">    block.style.boxShadow =  shadow + <span class="string">'px 2px 10px rgba(0,0,0,.5)'</span>      <span class="comment">//盒子的投影随着鼠标的移动，左右移动</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="css代码"><a href="#css代码" class="headerlink" title="css代码"></a>css代码</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-50%);</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.ball</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -188,11 +188,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -430,19 +430,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>
@@ -494,7 +498,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://39.107.229.87/home" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的毕业设计</a>
+              <a href="http://39.107.229.87/home" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>欲言Blog</a>
             </li>
           
         </ul>

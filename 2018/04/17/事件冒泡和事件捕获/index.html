@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: webpack | Blog(*^▽^*)</title>
+  <title>事件冒泡和事件捕获 | Blog(*^▽^*)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog(*^▽^*)">
-<meta property="og:url" content="http://yoursite.com/tags/webpack/index.html">
+  <meta name="description" content="事件冒泡和事件捕获两个概念都是为了解决页面中事件流（事件发生顺序）的问题123&amp;lt;div id=&quot;block&quot;&amp;gt;    &amp;lt;a href=&quot;javascript:;&quot;&amp;gt;点击&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; 思考 点击a标签，此时a标签和id为block的div都分别绑定了一个 click 事件，那么事件该如何执行">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件冒泡和事件捕获">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/事件冒泡和事件捕获/index.html">
 <meta property="og:site_name" content="Blog(*^▽^*)">
+<meta property="og:description" content="事件冒泡和事件捕获两个概念都是为了解决页面中事件流（事件发生顺序）的问题123&amp;lt;div id=&quot;block&quot;&amp;gt;    &amp;lt;a href=&quot;javascript:;&quot;&amp;gt;点击&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; 思考 点击a标签，此时a标签和id为block的div都分别绑定了一个 click 事件，那么事件该如何执行">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-17T03:08:47.534Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog(*^▽^*)">
+<meta name="twitter:title" content="事件冒泡和事件捕获">
+<meta name="twitter:description" content="事件冒泡和事件捕获两个概念都是为了解决页面中事件流（事件发生顺序）的问题123&amp;lt;div id=&quot;block&quot;&amp;gt;    &amp;lt;a href=&quot;javascript:;&quot;&amp;gt;点击&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt; 思考 点击a标签，此时a标签和id为block的div都分别绑定了一个 click 事件，那么事件该如何执行">
   
     <link rel="alternative" href="/atom.xml" title="Blog(*^▽^*)" type="application/atom+xml">
   
@@ -146,36 +151,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-事件冒泡和事件捕获" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/17/webpack学习记录/" class="archive-article-date">
-  	<time datetime="2018-04-17T01:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/17/webpack学习记录/">webpack学习记录</a>
+    <h1 class="article-title" itemprop="name">
+      事件冒泡和事件捕获
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/04/17/事件冒泡和事件捕获/" class="archive-article-date">
+  	<time datetime="2018-04-17T02:12:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>事件冒泡</strong>和<strong>事件捕获</strong>两个概念都是为了解决页面中事件流（事件发生顺序）的问题<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"block"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>思考</strong> 点击a标签，此时a标签和id为block的div都分别绑定了一个 click 事件，那么事件该如何执行<br><br><a id="more"></a></p>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>水冒泡，会逐渐的冒泡到水面。事件冒泡也是一样，事件会从最底层开始发生，然后向上传播，直到document对象<br>事件冒泡概念下click事件执行顺序：a -&gt; div -&gt; body -&gt; html -&gt; document</p>
+<h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><p>事件捕获和事件冒泡正好相反，事件从最外层开始发生<br>事件捕获概念下click事件执行顺序：document -&gt; html -&gt; body -&gt; div -&gt; a</p>
+<h2 id="addEventListener的第三个参数"><a href="#addEventListener的第三个参数" class="headerlink" title="addEventListener的第三个参数"></a>addEventListener的第三个参数</h2><p>通常使用addEventListener都是传两个参数，一个 evnet 一个 fn<br>但其实它可以传三个参数的，第三个参数是一个波尔值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.addEventListener(event, <span class="function"><span class="keyword">function</span>, <span class="title">useCapture</span>)</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>useCapture</strong>的默认值为<strong>false</strong><br>如果<strong>useCapture</strong>是<strong>true</strong>那么在捕获阶段执行<strong>function</strong><br>如果<strong>useCapture</strong>是<strong>false</strong>那么在冒泡阶段执行<strong>function</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,38 +192,142 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/构建工具//" class="article-tag-list-link color5">构建工具</a>
+        			<a href="/categories/js基础//" class="article-tag-list-link color5">js基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/04/17/事件冒泡和事件捕获/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/04/17/vue生命周期/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue生命周期</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/04/17/事件冒泡和事件捕获/", 
+    sourceId: "事件冒泡和事件捕获",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+  <div id="SOHUCS" sid="事件冒泡和事件捕获" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -237,9 +350,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
