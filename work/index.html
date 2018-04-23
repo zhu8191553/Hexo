@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>工作中的常见问题以及常用代码 | Blog(*^▽^*)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="div不换行超出文字…12345&amp;#123;    white-space:nowrap;    text-overflow:ellipsis;     overflow: hidden;&amp;#125; 兼容IE8的透明度样式123&amp;#123;    filter: alpha(opacity=30);&amp;#125; 阻止默认行为1e.preventDefault() 阻止冒泡1stopPropga">
+  <meta name="description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
 <meta property="og:type" content="website">
 <meta property="og:title" content="工作中的常见问题以及常用代码">
 <meta property="og:url" content="http://yoursite.com/work/index.html">
 <meta property="og:site_name" content="Blog(*^▽^*)">
-<meta property="og:description" content="div不换行超出文字…12345&amp;#123;    white-space:nowrap;    text-overflow:ellipsis;     overflow: hidden;&amp;#125; 兼容IE8的透明度样式123&amp;#123;    filter: alpha(opacity=30);&amp;#125; 阻止默认行为1e.preventDefault() 阻止冒泡1stopPropga">
+<meta property="og:description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-17T00:58:48.054Z">
+<meta property="og:updated_time" content="2018-04-23T06:11:43.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中的常见问题以及常用代码">
-<meta name="twitter:description" content="div不换行超出文字…12345&amp;#123;    white-space:nowrap;    text-overflow:ellipsis;     overflow: hidden;&amp;#125; 兼容IE8的透明度样式123&amp;#123;    filter: alpha(opacity=30);&amp;#125; 阻止默认行为1e.preventDefault() 阻止冒泡1stopPropga">
+<meta name="twitter:description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
   
     <link rel="alternative" href="/atom.xml" title="Blog(*^▽^*)" type="application/atom+xml">
   
@@ -167,11 +167,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><br></p>
-<h2 id="div不换行超出文字…"><a href="#div不换行超出文字…" class="headerlink" title="div不换行超出文字…"></a>div不换行超出文字…</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">    <span class="attribute">text-overflow</span>:ellipsis; </span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="移动端重置页面字体（用rem做计量单位）"><a href="#移动端重置页面字体（用rem做计量单位）" class="headerlink" title="移动端重置页面字体（用rem做计量单位）"></a>移动端重置页面字体（用rem做计量单位）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">viewRest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oHTML = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>];  <span class="comment">//当前页面 html标签</span></span><br><span class="line">    <span class="keyword">var</span> docWidth = <span class="built_in">document</span>.documentElement.clientWidth;   <span class="comment">//当前页面宽度</span></span><br><span class="line">    <span class="keyword">if</span>(docWidth&lt;=<span class="number">750</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        oHTML.style.fontSize = docWidth/<span class="number">18</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( docWidth &gt;<span class="number">750</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//oHTML.style.fontSize = 750/18</span></span><br><span class="line">        oHTML.style.fontSize = <span class="number">250</span>/<span class="number">6</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="div不换行超出文字…"><a href="#div不换行超出文字…" class="headerlink" title="div不换行超出文字…"></a>div不换行超出文字…</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">    <span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="兼容IE8的透明度样式"><a href="#兼容IE8的透明度样式" class="headerlink" title="兼容IE8的透明度样式"></a>兼容IE8的透明度样式</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity=30);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e.preventDefault()</span><br></pre></td></tr></table></figure>
 <h2 id="阻止冒泡"><a href="#阻止冒泡" class="headerlink" title="阻止冒泡"></a>阻止冒泡</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stopPropgation()</span><br></pre></td></tr></table></figure>
 <h2 id="flex左右居中-上下居中"><a href="#flex左右居中-上下居中" class="headerlink" title="flex左右居中+上下居中"></a>flex左右居中+上下居中</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -377,11 +379,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -390,6 +392,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>
@@ -450,6 +456,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           
             <li class="search-li">
               <a href="http://dsy.wsbgt.com/Home/Job" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>网上报告厅活动</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://langdutingwx.wsbgt.com/ad/langduting" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>朗读亭宣传(移动端)</a>
             </li>
           
             <li class="search-li">
