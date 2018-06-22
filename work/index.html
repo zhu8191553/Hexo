@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>工作中的常见问题以及常用代码 | Blog(*^▽^*)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
+  <meta name="description" content="好看的字体1font-family: Reem Kufi,Roboto,sans-serif; 移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth =">
 <meta property="og:type" content="website">
 <meta property="og:title" content="工作中的常见问题以及常用代码">
 <meta property="og:url" content="http://yoursite.com/work/index.html">
 <meta property="og:site_name" content="Blog(*^▽^*)">
-<meta property="og:description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
+<meta property="og:description" content="好看的字体1font-family: Reem Kufi,Roboto,sans-serif; 移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-23T06:11:43.862Z">
+<meta property="og:updated_time" content="2018-06-22T02:24:11.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工作中的常见问题以及常用代码">
-<meta name="twitter:description" content="移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth = document.documentElement.clientWidth;   //当前页面宽度">
+<meta name="twitter:description" content="好看的字体1font-family: Reem Kufi,Roboto,sans-serif; 移动端重置页面字体（用rem做计量单位）123456789101112function viewRest()&amp;#123;    var oHTML = document.getElementsByTagName(&quot;html&quot;)[0];  //当前页面 html标签    var docWidth =">
   
     <link rel="alternative" href="/atom.xml" title="Blog(*^▽^*)" type="application/atom+xml">
   
@@ -167,6 +167,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><br></p>
+<h2 id="好看的字体"><a href="#好看的字体" class="headerlink" title="好看的字体"></a>好看的字体</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">Reem</span> <span class="selector-tag">Kufi</span>,<span class="selector-tag">Roboto</span>,<span class="selector-tag">sans-serif</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="移动端重置页面字体（用rem做计量单位）"><a href="#移动端重置页面字体（用rem做计量单位）" class="headerlink" title="移动端重置页面字体（用rem做计量单位）"></a>移动端重置页面字体（用rem做计量单位）</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">viewRest</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oHTML = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>];  <span class="comment">//当前页面 html标签</span></span><br><span class="line">    <span class="keyword">var</span> docWidth = <span class="built_in">document</span>.documentElement.clientWidth;   <span class="comment">//当前页面宽度</span></span><br><span class="line">    <span class="keyword">if</span>(docWidth&lt;=<span class="number">750</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        oHTML.style.fontSize = docWidth/<span class="number">18</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>( docWidth &gt;<span class="number">750</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//oHTML.style.fontSize = 750/18</span></span><br><span class="line">        oHTML.style.fontSize = <span class="number">250</span>/<span class="number">6</span> + <span class="string">"px"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="div不换行超出文字…"><a href="#div不换行超出文字…" class="headerlink" title="div不换行超出文字…"></a>div不换行超出文字…</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">    <span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="兼容IE8的透明度样式"><a href="#兼容IE8的透明度样式" class="headerlink" title="兼容IE8的透明度样式"></a>兼容IE8的透明度样式</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity=30);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -383,7 +384,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color5">less</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -391,7 +400,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -400,10 +409,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">css3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">less</a>
               </li>
             
             <div class="clearfix"></div>
